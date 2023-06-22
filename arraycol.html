@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+</head>
+<body>
+    <h1 id="a">Yamuna</h1>
+    <script>
+        function colour(){
+            var colourArray=["red","blue","green","orange","lawngreen","orangered","pink"]
+            var randomNum=Math.floor(Math.random()*colourArray.length)
+            var randomNum2=Math.floor(Math.random()*colourArray.length)
+            document.body.style.backgroundColor=colourArray[randomNum];
+            document.getElementById("a").style.color=colourArray[randomNum2]
+            // setTimeout(colour,100)
+        }
+        colour()
+    </script>
+</body>
+</html>

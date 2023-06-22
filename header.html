@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+   <style>
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    header{
+        width: 100%;
+        height: 600px;
+        background-image: url(../Gallery/photos/0.jpg);
+        background-size: 100% 500px;
+        background-position: center;
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    button{
+        width: 80px;
+        height: 80px;
+        font-size: 60px;
+        border: none;
+        background-color: transparent;
+        text-shadow: 5px 5px 5px black;
+        color: yellow;
+        cursor: pointer;
+        font-weight: bold;
+    }
+   </style>
+</head>
+<body>
+    <header>
+    <button onclick="leftButton()"><</button>
+    <button onclick="rightButton()">></button>
+    </header>
+    <script>
+        var num=0;
+        var imagArray=["0","1","2","3","4","5","6","7","8","9"]
+        var headerTag=document.querySelector("header")
+        function rightButton(){
+            num++;
+            if(num>=0 && num<=imagArray.length-1){
+                headerTag.style.backgroundImage=`url(../Gallery/photos/${imagArray[num]}.jpg)`
+            }
+            else{
+                num=0;
+            }
+        }
+        function leftButton(){
+            num--;
+            if(num>=0 && num<=imagArray.length-1){
+                headerTag.style.backgroundImage=`url(../Gallery/photos/${imagArray[num]}.jpg)`
+            }
+            else{
+                num=imagArray.length-1;
+            }
+        }
+    </script>
+</body>
+</html>
